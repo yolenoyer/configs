@@ -1,0 +1,82 @@
+
+[interactive]
+	singleKey = true
+
+[user]
+	email = yolenoyer@gmail.com
+	name = Johann DAVID
+
+[alias]
+
+	l = log --all -n10 --abbrev=5 --pretty=format:\"%C(auto)%h %ad | %s%d\" --graph --date=short --color
+	la = log --all     --abbrev=5 --pretty=format:\"%C(auto)%h %ad | %s%d\" --graph --date=short --color
+	lc = log -n10      --abbrev=5 --pretty=format:\"%C(auto)%h %ad | %s%d\" --graph --date=short --color
+	lca = log          --abbrev=5 --pretty=format:\"%C(auto)%h %ad | %s%d\" --graph --date=short --color
+	ls = "!git l; git s"
+	lsm = "!glsm"
+
+	co = checkout
+	cob = checkout -b
+	cm = checkout master
+
+	dc = diff --cached --color
+	d = diff --color
+
+	s = status
+	ls = ls-files
+	lso = ls-files -o
+	lsm = ls-files -m
+
+	r = reset
+	rp = reset -p
+	rh = reset --hard
+
+	rbi = rebase --interactive
+	rbc = rebase --continue
+	rba = rebase --abort
+
+	cp = cherry-pick
+	cpn = cherry-pick -n
+
+	a = add
+	ap = add -p
+	aa = add -Av
+	au = add -uv
+	aas = "!git add -Av; git status"
+	aus = "!git add -uv; git status"
+
+	b = branch
+	bd = branch -d
+	bD = branch -D
+
+	cfd = clean -fd
+
+	st = stash
+	sl = stash list
+	ss = stash save
+	ssk = stash save --keep-index
+	sp = stash pop
+	spi = stash pop --index
+	sa = stash apply
+
+	good = bisect good
+	bad  = bisect bad
+
+	com = commit
+	can = commit --amend --no-edit
+	ca = commit --amend
+	aucan = "!git add -u; git commit --amend --no-edit"
+	aacan = "!git add -A; git commit --amend --no-edit"
+	auca = "!git add -u; git commit --amend"
+	aaca = "!git add -A; git commit --amend"
+	aucom = "!git add -u; git commit"
+	aacom = "!git add -A; git commit"
+	aamin = "!git add -A; git commit -m mineur"
+	aumin = "!git add -u; git commit -m mineur"
+	min = commit -m mineur
+
+	pso = push --set-upstream origin
+
+[push]
+	default = simple
+
