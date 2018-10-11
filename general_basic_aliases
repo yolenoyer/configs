@@ -1,0 +1,100 @@
+
+alias b=bash
+alias l='ls -1 --color'
+alias ls='ls --color'
+alias ll='ls -lh1 --color'
+alias la='ls -a1 --color'
+alias lla='ls -lah1 --color'
+alias cp='cp -i'
+alias cd='cd -P'
+function -() { cd -; }
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+function cd/() { cd /; }
+alias cd..='cd ..'
+alias cd...='cd ../..'
+alias cd....='cd ../../..'
+alias cd.....='cd ../../../..'
+alias cda='cd /afac'
+alias rmF='rm -f'
+alias du='du -h'
+alias df='df -h'
+alias md=mkdir
+alias rd=rmdir
+alias ka=killall
+alias lsb=lsblk\ -o\ NAME\,MOUNTPOINT\,FSTYPE\,SIZE\,LABEL\,UUID
+alias psa='ps -A'
+alias p='pwd'
+alias hn='hostname'
+alias lns='ln -s'
+alias gg=grep
+alias R='reset'
+alias bc='bc -l'
+alias h1='head -n 1'
+alias t1='tail -n 1'
+alias less='less -R'
+alias loc='locate -i'
+alias cal='cal -3'
+alias caly='\cal -y'
+alias calyy='\cal -Y'
+alias calY='\cal -Y'
+alias lf='ls --color=never -ct|head -n 1'
+alias xl='xargs -d "\n"'
+alias taro='tar --one-top-level'
+alias mca='make clean all'
+alias smi='sudo make install'
+alias eb='exec bash'
+alias ebl='exec bash -l'
+alias awki='awk -i inplace'
+
+# Gnu screen:
+alias s=screen
+alias sl='screen -list'
+alias sx='screen -x'
+alias sX='screen -X screen'
+alias sk=screenkill
+
+# GIT:
+alias g='git'
+alias gl='git l'
+alias glc='git lc'
+alias gla='git la'
+alias gdc='git dc'
+alias gd='git d'
+alias gs='git s'
+alias gr='git r'
+alias ga='git a'
+alias gaa='git aa'
+alias gap='git ap'
+alias gau='git au'
+alias gsl='git sl'
+alias gss='git ss'
+alias gssk='git ssk'
+alias gsp='git sp'
+alias gspi='git spi'
+alias gcm='git co master'
+alias gcom='git com -m'
+alias gcan='git can'
+alias gca='git ca'
+alias gaucan='git aucan'
+alias gaacan='git aacan'
+alias gauca='git auca'
+alias gaaca='git aaca'
+alias gaucom='git aucom'
+alias gaacom='git aacom'
+alias gaacomm='git aacom -m'
+function gac() {
+	local title="$@"
+	git aacom -m "$title"
+}
+alias gmin='git min'
+alias gamin='git aamin'
+alias gaamin='git aamin'
+alias gaumin='git aumin'
+alias gcfd='git clean -fd'
+
+alias ssha=ssh-add
+
+# vim: ft=sh
