@@ -1252,19 +1252,19 @@ xkb_symbols "pc+fr+inet(evdev)" {
     };
     key <AB07> {
         type= "FOUR_LEVEL",
-        symbols[Group1]= [           comma,        question,      grave, dead_doubleacute ]
+        symbols[Group1]= [           comma,        question,       grave,  dead_doubleacute ]
     };
     key <AB08> {
         type= "FOUR_LEVEL",
-        symbols[Group1]= [       semicolon,          period,  horizconnector,        multiply ]
+        symbols[Group1]= [       semicolon,          period,  numbersign,         multiply ]
     };
     key <AB09> {
         type= "FOUR_LEVEL",
-        symbols[Group1]= [           colon,           slash,  bar,        division ]
+        symbols[Group1]= [           colon,           slash,         bar,         division ]
     };
     key <AB10> {
         type= "FOUR_LEVEL",
-        symbols[Group1]= [          exclam,         backslash,   backslash,   dead_abovedot ]
+        symbols[Group1]= [          exclam,       backslash,   backslash,    dead_abovedot ]
     };
     key <RTSH> {         [         Shift_R ] };
     key <KPMU> {
