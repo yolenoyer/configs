@@ -1,0 +1,47 @@
+
+Control-k: kill-whole-line
+Control-z: undo
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\e[C": forward-char
+"\e[D": backward-char
+"\eOA": history-search-backward
+"\eOB": history-search-forward
+"\eOC": forward-char
+"\eOD": backward-char
+"\ej": shell-backward-word
+"\ek": shell-forward-word
+"\ee": shell-expand-line
+
+"\e.": universal-argument
+
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+
+"\e\e[A": menu-complete
+"\e\e[C": menu-complete
+# s-right:
+"\e[1;2C": menu-complete
+# pgdown:
+"\e[6~": menu-complete
+"\e\e[B": menu-complete-backward
+"\e\e[D": menu-complete-backward
+# s-left:
+"\e[1;2D": menu-complete-backward
+# pgup:
+"\e[5~": menu-complete
+
+"\ewub": "/usr/bin/"
+"\ewul": "/usr/lib/"
+"\ewui": "/usr/include/"
+"\ewus": "/usr/share/"
+
+"\en": ">/dev/null 2>&1"
+
+"\eh": "~/"
+
