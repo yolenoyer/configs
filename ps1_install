@@ -1,0 +1,128 @@
+
+function __ps1_has()
+{
+	[[
+		$DEFAULT_PS1 == largeps1 ||
+		$DEFAULT_PS1 == smallps1 ||
+		$DEFAULT_PS1 == tinyps1 ||
+		$DEFAULT_PS1 == remoteps1 || 
+		$DEFAULT_PS1 == nops1
+	]]
+}
+
+
+if ! __ps1_has "$DEFAULT_PS1"; then
+	DEFAULT_PS1=smallps1
+fi
+
+
+__PS1_MAIN__()
+{
+	# Définit des constantes:
+	local reset="\[\e[0m\]"
+	local default="$reset"
+	local green="${default}\[\e[1;38;5;34m\]"
+	local red="${default}\[\e[1;38;5;124m\]"
+	local orange="${default}\[\e[1;38;5;130m\]"
+	local blue="${default}\[\e[34m\]"
+	local magenta="${default}\[\e[1;38;5;97m\]"
+	local strong="${default}\[\e[1m\]"
+
+
+	# Éléments dissociés:
+	local cwd='\w'
+	local host='\h'
+	local user='\u'
+
+	local sign role_color
+	if [[ ${EUID} == 0 ]]; then
+		sign="${red}#${default}"
+		role_color=$red
+	else
+		sign="${green}\$${default}"
+		role_color=$green
+	fi
+
+	local color_user=${role_color}${user}${default}
+
+	local color_ssh=
+	local host_color=${blue}
+	if [[ -n $SSH_CLIENT ]]; then
+		host_color=${magenta}
+		color_ssh="${host_color}${host}${default} "
+	fi
+	local color_host=${host_color}${host}${default}
+
+	local tinysign=${sign}
+
+	if [[ -n $STY ]]; then
+		local screen_sign="${blue}(s)${default} "
+		sign=${screen_sign}${sign}
+	fi
+
+	# Variantes de PS1:
+
+	local largeLine="${color_ssh}[ ${cwd} ]"
+	local largeColor="${default}\[\e[48;5;237m\]"
+	local largePS1="${default}\n${largeColor}${largeLine}${default}\n${sign} "
+
+	local smallPS1="${color_ssh}${default}${cwd} ${sign} "
+	local tinyPS1="${tinysign} "
+	local remotePS1="${color_user}@${color_host} ${cwd} ${sign} "
+
+
+	# Alias:
+	alias largeps1=PS1=\"$largePS1\"
+	alias smallps1=PS1=\"$smallPS1\"
+	alias tinyps1=PS1=\"$tinyPS1\"
+	alias remoteps1=PS1=\"$remotePS1\"
+	alias nops1=PS1=
+	1d() { eval $DEFAULT_PS1; }
+	1l() { eval largeps1; }
+	1s() { eval smallps1; }
+	1t() { eval tinyps1; }
+	1r() { eval remoteps1; }
+	1n() { PS1=; }
+
+	PS2='> '
+	PS3='> '
+	PS4='+ '
+}
+
+
+__PS1_MAIN__
+unset __PS1_MAIN__
+
+
+function ps1()
+{
+	declare -A shortcuts=(
+		[l]=largeps1
+		[large]=largeps1
+		[s]=smallps1
+		[small]=smallps1
+		[t]=tinyps1
+		[tiny]=tinyps1
+		[r]=remoteps1
+		[remote]=remoteps1
+		[n]=nops1
+		[0]=nops1
+	)
+
+	local ps1_name=${1-$DEFAULT_PS1}
+
+	local key
+	for key in "${!shortcuts[@]}"; do
+		if [[ $1 == $key ]]; then
+			ps1_name="${shortcuts[$key]}"
+		fi
+	done
+
+	__ps1_has "$ps1_name" || exit 1
+	eval "$ps1_name"
+}
+
+
+[[ -z $NOPS1 ]] && ps1
+
+# vim: ft=sh
