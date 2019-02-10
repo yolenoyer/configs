@@ -61,6 +61,8 @@ alias sk=screenkill
 alias t=tmux
 alias tt='tmux new-session \; new-window \; new-window \; new-window \; select-window -t 1'
 alias t4='tmux new-session \; new-window \; new-window \; new-window \; select-window -t 1'
+alias ta='tmux attach'
+alias td='tmux new-session -d'
 
 # GIT:
 alias g='git'
