@@ -1,0 +1,272 @@
+[
+    {
+        "key": "d",
+        "action": "closetab",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+    },
+    {
+        "key": "<",
+        "action": "back",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+    },
+    {
+        "key": ">",
+        "action": "forward",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+    },
+    {
+        "key": "h",
+        "action": "openbookmarknewtab",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ],
+        "activeInInputs": false,
+        "bookmark": "DuckDuckGo"
+    },
+    {
+        "key": "shift+h",
+        "action": "openbookmark",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "bookmark": "DuckDuckGo",
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+    },
+    {
+        "key": "ß",
+        "action": "openbookmarknewtab",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "bookmark": "Stack Overflow",
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ],
+        "activeInInputs": false
+    },
+    {
+        "key": "shift+s",
+        "action": "openbookmark",
+        "blacklist": "false",
+        "sites": "*mail.google.com*",
+        "open": false,
+        "bookmark": "Stack Overflow",
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ],
+        "activeInInputs": false
+    },
+    {
+        "key": "←",
+        "action": "openbookmarknewtab",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "bookmark": "YouTube",
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+    },
+    {
+        "key": "shift+y",
+        "action": "openbookmark",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "bookmark": "YouTube",
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+    },
+    {
+        "key": "µ",
+        "action": "openbookmarknewtab",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "bookmark": "Gmail",
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+    },
+    {
+        "key": "shift+m",
+        "action": "openbookmark",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "bookmark": "Gmail",
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+    },
+    {
+        "key": "i",
+        "action": "javascript",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": true,
+        "code": "\nfunction getStyle(el,styleProp) {\n    var result;\n    if(el.currentStyle) {\n        result = el.currentStyle[styleProp];\n    } else if (window.getComputedStyle) {\n        result = document.defaultView.getComputedStyle(el,null)\n                                    .getPropertyValue(styleProp);\n    } else {\n        result = 'unknown';\n    }\n    return result;\n}\n\nvar inputs = document.querySelectorAll('input[type=text]')\n\nvar to_skip = {\n\tdisplay: 'none',\n\tvisibility: 'hidden',\n\topacity: 0,\n};\n\nfor (var input of inputs) {\n\tvar skip = false;\n\tfor (var prop_to_skip in to_skip) {\n\t\tvar value_to_skip = to_skip[prop_to_skip];\n\t\tvar actual_value = getStyle(input, prop_to_skip);\n\n\t\tif (actual_value == value_to_skip) {\n\t\t\tskip = true;\n\t\t\tbreak;\n\t\t}\n\t}\n\tif (!skip) {\n\t\tconsole.log(input);\n\t\tinput.select();\n\t\tbreak;\n\t}\n}\n\n",
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+    },
+    {
+        "key": "ħ",
+        "action": "openbookmarknewtab",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ],
+        "activeInInputs": true,
+        "bookmark": "DuckDuckGo"
+    },
+    {
+        "key": "shift+Ħ",
+        "action": "openbookmark",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "bookmark": "DuckDuckGo",
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ],
+        "activeInInputs": true
+    },
+    {
+        "key": "ß",
+        "action": "openbookmarknewtab",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "bookmark": "Stack Overflow",
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ],
+        "activeInInputs": true
+    },
+    {
+        "key": "§",
+        "action": "openbookmark",
+        "blacklist": "false",
+        "sites": "*mail.google.com*",
+        "open": false,
+        "bookmark": "Stack Overflow",
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ],
+        "activeInInputs": true
+    },
+    {
+        "key": "←",
+        "action": "openbookmarknewtab",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "bookmark": "YouTube",
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ],
+        "activeInInputs": true
+    },
+    {
+        "key": "¥",
+        "action": "openbookmark",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "bookmark": "YouTube",
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ],
+        "activeInInputs": true
+    },
+    {
+        "key": "µ",
+        "action": "openbookmarknewtab",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "bookmark": "Gmail",
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ],
+        "activeInInputs": true
+    },
+    {
+        "key": "º",
+        "action": "openbookmark",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "bookmark": "Gmail",
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ],
+        "activeInInputs": true
+    },
+    {
+        "key": "ctrl+shift+R",
+        "action": "closerighttabs",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+    },
+    {
+        "key": "ctrl+shift+L",
+        "action": "closelefttabs",
+        "blacklist": false,
+        "sites": "*mail.google.com*",
+        "open": false,
+        "exported": true,
+        "sitesArray": [
+            "*mail.google.com*"
+        ]
+    }
+]
