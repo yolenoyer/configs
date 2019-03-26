@@ -50,13 +50,6 @@ alias ebl='exec bash -l'
 alias awki='awk -i inplace'
 alias wcl=wc\ -l
 
-# Gnu screen:
-alias s=screen
-alias sl='screen -list'
-alias sx='screen -x'
-alias sX='screen -X screen'
-alias sk=screenkill
-
 # Tmux:
 alias t=tmux
 alias tt='tmux new-session \; new-window \; new-window \; new-window \; select-window -t 1'
